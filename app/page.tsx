@@ -25,7 +25,7 @@ export default function Home() {
                 : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
             }`}
           >
-            Vùng {mapName[region]}
+            {mapName[region]}
           </button>
         ))}
       </div>
@@ -34,9 +34,12 @@ export default function Home() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {usersData[activeRegion].map((user) => (
           <div key={user.id} className="border rounded-lg p-3 text-center shadow-sm hover:shadow-md">
-            <p className="font-semibold text-gray-800">{user.name}</p>
+            <h1 className="text-2xl font-bold mb-2">Tên khách hàng: {user.name}</h1>
+            <p>Mã đối tượng: {user.id}</p>
+            <p>Số điện thoại: {user.phone || 'không có'}</p>
+
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`/qrcodes/${user.id}.png`} alt={user.name} className="w-32 h-32 mx-auto my-2" />
-            <p className="text-sm text-gray-600">{user.phone || 'Chưa có số'}</p>
           </div>
         ))}
       </div>

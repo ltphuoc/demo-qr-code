@@ -19,8 +19,8 @@ export default function UserPage() {
   return (
     <div className="p-6 text-center">
       <h1 className="text-2xl font-bold mb-2">Tên khách hàng: {data.name}</h1>
-      <p className="text-gray-600">Mã đối tượng: {data.id}</p>
-      <p className="text-gray-600">Số điện thoại: {data.phone || 'N/A'}</p>
+      <p>Mã đối tượng: {data.id}</p>
+      <p>Số điện thoại: {data.phone || 'không có'}</p>
     </div>
   )
 }
